@@ -1,0 +1,45 @@
+
+Showing logs for build [32mfcmjenkinsx-environment-jenkins-tw4mw-1[0m stage [32mpr-checks[0m and container [32mcredential-initializer[0m
+{"level":"info","ts":1608756877.4973166,"caller":"creds-init/main.go:44","msg":"Credentials initialized."}
+
+Showing logs for build [32mfcmjenkinsx-environment-jenkins-tw4mw-1[0m stage [32mpr-checks[0m and container [32mworking-dir-initializer[0m
+
+Showing logs for build [32mfcmjenkinsx-environment-jenkins-tw4mw-1[0m stage [32mpr-checks[0m and container [32mplace-tools[0m
+
+Showing logs for build [32mfcmjenkinsx-environment-jenkins-tw4mw-1[0m stage [32mpr-checks[0m and container [32mstep-git-source-fcmjenkinsx-environment-jenkins-tw4mw-7ttwc[0m
+{"level":"info","ts":1608756907.2655876,"caller":"git/git.go:105","msg":"Successfully cloned https://github.com/FCMJenkinsX/environment-jenkinsx-dev.git @ master in path /workspace/source"}
+{"level":"warn","ts":1608756907.2656772,"caller":"git/git.go:152","msg":"Unexpected error: creating symlink: symlink /tekton/home/.ssh /root/.ssh: file exists"}
+{"level":"info","ts":1608756907.3184688,"caller":"git/git.go:133","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+
+Showing logs for build [32mfcmjenkinsx-environment-jenkins-tw4mw-1[0m stage [32mpr-checks[0m and container [32mstep-setup-builder-home[0m
+
+Showing logs for build [32mfcmjenkinsx-environment-jenkins-tw4mw-1[0m stage [32mpr-checks[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:ce74123a23d332213e356d28f8e6d6f733899b86,1:0e40b77ed56472040e3e271885db5df9ca7b28f8
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git fetch origin --unshallow 0e40b77ed56472040e3e271885db5df9ca7b28f8: ce74123a23d332213e356d28f8e6d6f733899b86:
+DEBUG: ran git fetch --unshallow origin 0e40b77ed56472040e3e271885db5df9ca7b28f8: ce74123a23d332213e356d28f8e6d6f733899b86: in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git branch
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git checkout master
+DEBUG: ran git checkout master in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git reset --hard ce74123a23d332213e356d28f8e6d6f733899b86
+DEBUG: ran git reset --hard ce74123a23d332213e356d28f8e6d6f733899b86 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git clean -fd .
+DEBUG: ran clean --force -d . in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git merge 0e40b77ed56472040e3e271885db5df9ca7b28f8
+DEBUG: ran git merge 0e40b77ed56472040e3e271885db5df9ca7b28f8 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git log --format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%s%n%b%x1e ce74123a23d332213e356d28f8e6d6f733899b86..HEAD
+Merged SHA 0e40b77ed56472040e3e271885db5df9ca7b28f8 with commit message 'chore(deps): bump https://github.com/FCMJenkinsX/spring-boot-http-gradle.git' into base branch master
+
+Showing logs for build [32mfcmjenkinsx-environment-jenkins-tw4mw-1[0m stage [32mpr-checks[0m and container [32mstep-verify-parameters[0m
+error: resolve the secrets URIs: replacing secrets URIs: replacing vault paths in *****User:
+  password: local:jenkinsx/*****User:password
+  username: *****
+enableDocker: false
+pipelineUser:
+  email: mike@fcm.com
+  token: local:jenkinsx/pipelineUser:token
+  username: *******
+prow:
+  hmacToken: local:jenkinsx/prow:hmacToken
+: unable to find "password" in secret at "jenkinsx/*****User"
+[31m
+Pipeline failed on stage 'pr-checks' : container 'step-verify-parameters'. The execution of the pipeline has stopped.[0m
